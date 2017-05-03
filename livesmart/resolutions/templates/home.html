@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.email }}!
+{% else %}
+Hello Guest. You are not logged in.<br>
+<a href="{% url 'login' %}">Log in</a> |
+<a href="{% url 'accounts:register' %}">Register</a>
+{% endif %}
+<br>These are your resolutions for the new year:
+{% endblock %}
+
