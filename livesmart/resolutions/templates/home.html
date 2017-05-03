@@ -3,10 +3,31 @@
 {% if user.is_authenticated %}
 Hi {{ user.email }}!
 {% else %}
-Hello Guest. You are not logged in.<br>
+<p>Hello Guest. You are not logged in.</p>
 <a href="{% url 'login' %}">Log in</a> |
 <a href="{% url 'accounts:register' %}">Register</a>
 {% endif %}
-<br>These are your resolutions for the new year:
+<p>These are your resolutions for the new year:</p>
+<style>
+table, th, td {
+border:1px solid;
+}
+</style>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+  </thead>
+  <tbody>
+    {% for resolution in resolutions %}
+    <tr>
+      <td>{{ resolution.id }}</td>
+      <td>{{ resolution.title }}</td>
+      <td>{{ resolution.body }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
 

@@ -29,4 +29,7 @@ urlpatterns = [
         {'template_name': 'password_reset_complete.html'},
         name="password_reset_complete"),
     url(r'^testlivesmart/accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^testlivesmart/api/', include('resolutions.api_urls', namespace='api')),
+    url(r'^testlivesmart/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^testlivesmart/api-token-auth/', authtoken_views.obtain_auth_token)
 ]
