@@ -29,5 +29,14 @@ border:1px solid;
     {% endfor %}
   </tbody>
 </table>
+<br><hr>
+<p>After registering and setting your password, you can use these endpoints:</p>
+
+<p>To get the auth token: curl -X POST -H "Content-Type: application/json" -d '{"username": "USERNAME", "password": "PASSWORD"}' http://ma.rcosbartolo.me/testlivesmart/api-token-auth/</p>
+
+<p>To get (GET) or create (POST) your resolutions the enpoint is http://ma.rcosbartolo.me/testlivesmart/api/resolutions/</p>
+
+<p>To update (PUT) or delete (DELETE) a resolution you can use http://ma.rcosbartolo.me/testlivesmart/api/resolutions/ID/</p>
+
 {% endblock %}
 
